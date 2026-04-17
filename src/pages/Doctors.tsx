@@ -5,39 +5,39 @@ import { Link } from "react-router-dom";
 const doctors = [
   {
     id: 1,
-    name: "Dr. Anjali Sharma",
-    specialization: "Dermatologist & Immunologist",
-    city: "Pune",
-    hospital: "Ruby Hall Clinic",
-    experience: "15+ Years",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800"
+    name: "Dr. A. Razzaque Ahmed",
+    specialization: "Clinical Immunologist & Dermatologist",
+    city: "USA",
+    hospital: "Center for Blistering Diseases",
+    experience: "30+ Years",
+    image: "/wp-images/Dr.-Ahmed-570x380-1-po33mh20qt7thfkk29lc1buk5do1q8d7gxz2n8ust4.jpg"
   },
   {
     id: 2,
-    name: "Dr. Vikram Deshmukh",
-    specialization: "Senior Dermatologist",
-    city: "Mumbai",
-    hospital: "Lilavati Hospital",
-    experience: "20+ Years",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800"
+    name: "Prof. A. C. Inamadar",
+    specialization: "Dermatologist and Venereologist",
+    city: "Vijaypur",
+    hospital: "BLDE",
+    experience: "25+ Years",
+    image: "/wp-images/inamdar.jpg"
   },
   {
     id: 3,
-    name: "Dr. Priya Patel",
-    specialization: "Autoimmune Skin Specialist",
-    city: "Ahmedabad",
-    hospital: "Apollo Hospitals",
-    experience: "12+ Years",
-    image: "https://images.unsplash.com/photo-1594824436998-dd40e4f3eb54?auto=format&fit=crop&q=80&w=800"
+    name: "Prof. Takashi Hashimoto",
+    specialization: "Specially-Appointed Professor",
+    city: "Osaka",
+    hospital: "Osaka Metropolitan University",
+    experience: "20+ Years",
+    image: "/wp-images/Takashi-Hashimoto.webp"
   },
   {
     id: 4,
-    name: "Dr. Rajesh Kumar",
-    specialization: "Dermatologist",
-    city: "Delhi",
-    hospital: "AIIMS",
-    experience: "18+ Years",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800"
+    name: "Dr. Sharad Mutalik",
+    specialization: "Renowned Dermatologist & Trustee",
+    city: "Pune",
+    hospital: "AIBDF",
+    experience: "30+ Years",
+    image: "/wp-images/photo.jpg"
   }
 ];
 
@@ -48,7 +48,7 @@ export default function Doctors() {
       <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=2000" 
+            src="/wp-images/Autoimmune-image3.jpg" 
             alt="Medical Network" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

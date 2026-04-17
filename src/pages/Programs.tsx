@@ -7,28 +7,28 @@ const programs = [
     icon: Users,
     color: "bg-blue-500",
     desc: "We conduct regular awareness campaigns in communities and through digital platforms to educate the public about the early signs of auto-immune blistering diseases. Early detection is crucial for effective treatment.",
-    image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=1000"
+    image: "/wp-images/about2.jpg"
   },
   {
     title: "Patient Support Programs",
     icon: HeartHandshake,
     color: "bg-rose-500",
     desc: "Our core program focuses on providing direct assistance to patients. This includes financial aid for expensive medications, connecting patients with specialized doctors, and offering emotional support groups.",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=1000"
+    image: "/wp-images/Autoimmune-topbanner.jpg"
   },
   {
     title: "Medical Collaborations",
     icon: Stethoscope,
     color: "bg-teal-500",
     desc: "We partner with leading hospitals, research institutions, and medical professionals to improve treatment protocols. Our collaboration with institutions like Osaka Metropolitan University helps bring global expertise to local patients.",
-    image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=1000"
+    image: "/wp-images/Autoimmune-image2.jpg"
   },
   {
     title: "Educational Outreach",
     icon: GraduationCap,
     color: "bg-indigo-500",
     desc: "We organize seminars and workshops for general practitioners and dermatologists to help them better identify and diagnose these rare conditions, reducing the time it takes for patients to receive the correct diagnosis.",
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1000"
+    image: "/wp-images/Autoimmune-image3.jpg"
   }
 ];
 
@@ -39,7 +39,7 @@ export default function Programs() {
       <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000" 
+            src="/wp-images/faq-topbanner.jpg" 
             alt="Programs" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

@@ -137,7 +137,7 @@ export default function Donate() {
       <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80&w=2000" 
+            src="/wp-images/faq-topbanner.jpg" 
             alt="Donate" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

@@ -53,7 +53,7 @@ export default function Testimonials() {
       <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=2000" 
+            src="/wp-images/testimonial-topbanner.jpg" 
             alt="Testimonials" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

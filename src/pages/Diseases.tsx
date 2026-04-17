@@ -9,7 +9,7 @@ const diseases = [
     name: "Pemphigus",
     shortDesc: "Pemphigus is a group of rare autoimmune diseases that cause blistering of the skin and mucous membranes (mouth, nose, throat, eyes, and genitals).",
     symptoms: ["Blisters on skin that easily rupture", "Painful blisters in mouth and throat", "Skin peeling"],
-    img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
+    img: "/wp-images/Autoimmune-topbanner.jpg",
     color: "bg-blue-500"
   },
   {
@@ -17,7 +17,7 @@ const diseases = [
     name: "Bullous Pemphigoid",
     shortDesc: "Bullous pemphigoid is a rare skin condition that causes large, fluid-filled blisters. They develop on areas of skin that often flex — such as the lower abdomen, upper thighs or armpits.",
     symptoms: ["Large, tense blisters that don't easily rupture", "Severe itching", "Red rash or hives before blisters form"],
-    img: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800",
+    img: "/wp-images/Autoimmune-image2.jpg",
     color: "bg-teal-500"
   }
 ];

@@ -25,7 +25,7 @@ const diseaseData = {
       "Wound care for ruptured blisters"
     ],
     living: "Patients are advised to avoid spicy or hard foods if they have mouth sores, practice good oral hygiene, minimize sun exposure, and gently care for their skin to prevent infection.",
-    img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=2000"
+    img: "/wp-images/Autoimmune-image1.jpg"
   },
   "bullous-pemphigoid": {
     name: "Bullous Pemphigoid",
@@ -48,7 +48,7 @@ const diseaseData = {
       "Anti-inflammatory medications"
     ],
     living: "Keep the skin clean and moisturized. Avoid activities that might rupture the blisters. Wear loose-fitting cotton clothing to minimize friction.",
-    img: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=2000"
+    img: "/wp-images/about1.jpg"
   },
   "mucous-membrane-pemphigoid": {
     name: "Mucous Membrane Pemphigoid",
@@ -72,7 +72,7 @@ const diseaseData = {
       "Specialized eye care to prevent scarring and vision loss"
     ],
     living: "Regular dental and eye check-ups are crucial. Eat a soft diet to avoid irritating mouth sores. Practice meticulous oral hygiene.",
-    img: "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&q=80&w=2000"
+    img: "/wp-images/about2.jpg"
   }
 };
 

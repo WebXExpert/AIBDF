@@ -111,7 +111,7 @@ export default function Home() {
             <div className="relative h-[600px] w-full hidden lg:block">
               <div className="img-reveal-container absolute top-0 right-0 w-4/5 h-4/5 rounded-card overflow-hidden shadow-card z-10">
                 <img 
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200" 
+                  src="/wp-images/homepage-banner1.jpg" 
                   alt="Doctor holding patient's hand" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -119,7 +119,7 @@ export default function Home() {
               </div>
               <div className="img-reveal-container absolute bottom-0 left-0 w-3/5 h-3/5 rounded-card overflow-hidden shadow-hover z-20 border-4 border-white">
                 <img 
-                  src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800" 
+                  src="/wp-images/about1.jpg" 
                   alt="Community support" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -160,7 +160,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="img-reveal-container rounded-card overflow-hidden shadow-card h-[500px]">
               <img 
-                src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1200" 
+                src="/wp-images/Autoimmune-topbanner.jpg" 
                 alt="Medical consultation" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -215,21 +215,21 @@ export default function Home() {
                 title: t('home.initiatives.med_guidance'),
                 desc: t('home.initiatives.med_guidance_desc'),
                 icon: <PhoneCall className="w-6 h-6" />,
-                img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800",
+                img: "/wp-images/WhatsApp-Image-2023-03-01-at-12.48.09.jpeg",
                 link: "/get-help"
               },
               {
                 title: t('home.initiatives.treatment'),
                 desc: t('home.initiatives.treatment_desc'),
                 icon: <Heart className="w-6 h-6" />,
-                img: "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&q=80&w=800",
+                img: "/wp-images/Autoimmune-image1.jpg",
                 link: "/get-help"
               },
               {
                 title: t('home.initiatives.community'),
                 desc: t('home.initiatives.community_desc'),
                 icon: <Users className="w-6 h-6" />,
-                img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800",
+                img: "/wp-images/about1.jpg",
                 link: "/contact"
               }
             ].map((service, i) => (
@@ -299,7 +299,7 @@ export default function Home() {
 
             <div className="img-reveal-container rounded-card overflow-hidden shadow-card h-[600px] relative">
               <img 
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=1200" 
+                src="/wp-images/about2.jpg" 
                 alt="Patient smiling" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -342,7 +342,7 @@ export default function Home() {
 
             <div className="fade-up md:col-span-2 img-reveal-container rounded-card overflow-hidden relative h-[400px]">
               <img 
-                src="https://images.unsplash.com/photo-1593113514676-5f01cec60e28?auto=format&fit=crop&q=80&w=1200" 
+                src="/wp-images/WhatsApp-Image-2023-03-01-at-12.48.09.jpeg" 
                 alt="Volunteers" 
                 className="w-full h-full object-cover opacity-80"
                 referrerPolicy="no-referrer"
@@ -355,7 +355,7 @@ export default function Home() {
 
             <div className="fade-up md:col-span-2 img-reveal-container rounded-card overflow-hidden relative h-[400px]">
               <img 
-                src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1200" 
+                src="/wp-images/WhatsApp-Image-2023-07-11-at-10.48.38.jpeg" 
                 alt="Medical facility" 
                 className="w-full h-full object-cover opacity-80"
                 referrerPolicy="no-referrer"

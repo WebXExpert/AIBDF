@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from "motion/react";
 import { MessageCircle, X, Send, Bot, User } from "lucide-react";
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
 type Message = {
   role: "user" | "assistant";
   content: string;
@@ -50,6 +48,13 @@ export default function AIAssistant() {
       - If asked for medical advice, kindly state that you cannot provide medical advice and suggest they register on the Get Help page to connect with a specialist.
       
       Keep your answers concise, empathetic, and supportive.`;
+
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) {
+        throw new Error("API key is not configured for the AI Assistant.");
+      }
+
+      const ai = new GoogleGenAI({ apiKey });
 
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",

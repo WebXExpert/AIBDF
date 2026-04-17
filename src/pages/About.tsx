@@ -56,7 +56,7 @@ export default function About() {
             </div>
             <div className="relative min-h-[400px] lg:min-h-full bg-slate-100">
               <img 
-                src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1000" 
+                src="/wp-images/about-topbanner.jpg" 
                 alt="Community Support" 
                 className="absolute inset-0 w-full h-full object-cover"
                 referrerPolicy="no-referrer"
