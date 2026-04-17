@@ -25,7 +25,7 @@ export const posts: Post[] = [
     authorTitle: "Reviewed by AIBDF Medical Advisory Board",
     category: "Awareness",
     tags: ["Pemphigus Vulgaris", "Early Detection", "Oral Sores"],
-    image: "/wp-images/Autoimmune-image1.jpg",
+    image: "/wp-images/ai-blog-pemphigus.webp",
     medicallyReviewedBy: "Prof. A. C. Inamadar, MD, FRCP (Edin)",
     sections: [
       {
@@ -75,7 +75,7 @@ export const posts: Post[] = [
     authorTitle: "Reviewed by AIBDF Medical Advisory Board",
     category: "Living With",
     tags: ["Bullous Pemphigoid", "Skin Care", "Daily Living"],
-    image: "/wp-images/Autoimmune-image2.jpg",
+    image: "/wp-images/ai-blog-skincare.webp",
     medicallyReviewedBy: "Dr. Sharad Mutalik, AIBDF Trustee & Dermatologist",
     sections: [
       {
@@ -123,7 +123,7 @@ export const posts: Post[] = [
     authorTitle: "Based on our 2024–2025 patient case work",
     category: "Treatment",
     tags: ["Patient Support", "Financial Aid", "India"],
-    image: "/wp-images/fin-help.png",
+    image: "/wp-images/ai-blog-finsupport.webp",
     sections: [
       {
         paragraphs: [
@@ -176,7 +176,7 @@ export const posts: Post[] = [
     authorTitle: "Reviewed by AIBDF Medical Advisory Board",
     category: "Research",
     tags: ["Rituximab", "Biologics", "Treatment"],
-    image: "/wp-images/Autoimmune-image3.jpg",
+    image: "/wp-images/ai-blog-rituximab.webp",
     medicallyReviewedBy: "Prof. Takashi Hashimoto, Osaka Metropolitan University",
     sections: [
       {
