@@ -5,6 +5,8 @@ import * as z from "zod";
 import { MapPin, Phone, Mail, Send, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { AnimatedHeading } from "../components/ui/AnimatedHeading";
+import Seo from "../components/seo/Seo";
+import { organizationSchema, webPageSchema } from "../components/seo/schemas";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -33,6 +35,19 @@ export default function Contact() {
 
   return (
     <div className="bg-white min-h-screen pb-24">
+      <Seo
+        title="Contact AIBDF"
+        description="Reach AIBDF's patient services, media, partnerships, or general enquiries team. Based in Pune, India. Responding within 2 working days."
+        jsonLd={[
+          organizationSchema,
+          webPageSchema({
+            path: "/contact",
+            name: "Contact AIBDF",
+            description: "Get in touch with AIBDF.",
+            breadcrumbs: [{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }],
+          }),
+        ]}
+      />
       {/* Hero Section */}
       <div className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-slate-50" />

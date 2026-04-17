@@ -2,6 +2,8 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "../lib/utils";
+import Seo from "../components/seo/Seo";
+import { faqPageSchema, webPageSchema } from "../components/seo/schemas";
 
 const faqs = [
   {
@@ -39,6 +41,19 @@ export default function FAQ() {
 
   return (
     <div className="bg-white min-h-screen pb-24">
+      <Seo
+        title="Frequently Asked Questions"
+        description="Answers to common questions about AIBDF — patient assistance, supported diseases, how we operate, tax benefits, and how to collaborate."
+        jsonLd={[
+          faqPageSchema(faqs.map((f) => ({ q: f.question, a: f.answer }))),
+          webPageSchema({
+            path: "/faq",
+            name: "FAQ",
+            description: "Frequently asked questions about AIBDF.",
+            breadcrumbs: [{ name: "Home", path: "/" }, { name: "FAQ", path: "/faq" }],
+          }),
+        ]}
+      />
       {/* Header */}
       <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

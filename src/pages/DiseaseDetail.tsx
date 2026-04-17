@@ -1,6 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowLeft, AlertCircle, Activity, Stethoscope, Pill, Heart } from "lucide-react";
+import Seo from "../components/seo/Seo";
+import { SITE_URL } from "../components/seo/Seo";
 
 const diseaseData = {
   "pemphigus": {
@@ -91,8 +93,36 @@ export default function DiseaseDetail() {
     );
   }
 
+  const medConditionSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    name: disease.name,
+    description: disease.overview,
+    signOrSymptom: disease.symptoms.map((s) => ({ "@type": "MedicalSignOrSymptom", name: s })),
+    cause: disease.causes,
+    url: `${SITE_URL}/diseases/${id}`,
+  };
+
   return (
     <div className="bg-white min-h-screen pb-24">
+      <Seo
+        title={`${disease.name} — Patient Guide`}
+        description={disease.overview}
+        image={disease.img}
+        jsonLd={[
+          medConditionSchema,
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalWebPage",
+            url: `${SITE_URL}/diseases/${id}`,
+            name: `${disease.name} — Patient Guide`,
+            description: disease.overview,
+            about: medConditionSchema,
+            audience: { "@type": "Audience", audienceType: "Patient" },
+            lastReviewed: new Date().toISOString().slice(0, 10),
+          },
+        ]}
+      />
       {/* Hero Header */}
       <div className="relative h-[60vh] min-h-[500px] flex items-end pb-16">
         <div className="absolute inset-0 z-0">

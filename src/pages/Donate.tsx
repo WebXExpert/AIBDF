@@ -6,6 +6,8 @@ import * as z from "zod";
 import { cn } from "../lib/utils";
 import { motion, AnimatePresence } from "motion/react";
 import { useSearchParams } from "react-router-dom";
+import Seo from "../components/seo/Seo";
+import { organizationSchema, webPageSchema } from "../components/seo/schemas";
 
 const donationSchema = z.object({
   amount: z.number().min(100, "Minimum donation is ₹100"),
@@ -133,10 +135,31 @@ export default function Donate() {
 
   return (
     <div className="bg-gray-50 min-h-screen pb-24">
+      <Seo
+        title="Donate to AIBDF"
+        description="Your donation funds real diagnosis, real treatment, and real lives for patients with rare auto-immune blistering diseases. 80G tax benefit. Secure payments via Stripe."
+        keywords={["donate AIBDF", "80G donation India", "pemphigus patient fund", "rare disease donation"]}
+        jsonLd={[
+          organizationSchema,
+          {
+            "@context": "https://schema.org",
+            "@type": "DonateAction",
+            name: "Donate to AIBDF",
+            recipient: { "@id": "https://aibdf.digitaldadi.agency/#organization" },
+            target: "https://aibdf.digitaldadi.agency/donate",
+          },
+          webPageSchema({
+            path: "/donate",
+            name: "Donate",
+            description: "Support AIBDF's work for patients with rare auto-immune blistering diseases.",
+            breadcrumbs: [{ name: "Home", path: "/" }, { name: "Donate", path: "/donate" }],
+          }),
+        ]}
+      />
       {/* Header */}
       <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
+          <img
             src="/wp-images/faq-topbanner.jpg" 
             alt="Donate" 
             className="w-full h-full object-cover"

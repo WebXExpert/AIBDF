@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
 import { Stethoscope, MapPin, Building, Calendar, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import Seo from "../components/seo/Seo";
+import { physicianSchema, webPageSchema } from "../components/seo/schemas";
 
 const doctors = [
   {
@@ -44,6 +46,27 @@ const doctors = [
 export default function Doctors() {
   return (
     <div className="bg-white min-h-screen pb-24">
+      <Seo
+        title="Our Network of Doctors"
+        description="Dermatologists with deep expertise in auto-immune blistering diseases — across India, USA, and Japan — partnering with AIBDF to deliver specialist care."
+        keywords={["pemphigus specialist India", "dermatologist blistering disease", "Dr Razzaque Ahmed", "Prof Inamadar"]}
+        jsonLd={[
+          webPageSchema({
+            path: "/doctors",
+            name: "Our Network of Doctors",
+            description: "AIBDF's network of specialist dermatologists.",
+            breadcrumbs: [{ name: "Home", path: "/" }, { name: "Doctors", path: "/doctors" }],
+          }),
+          ...doctors.map((d) =>
+            physicianSchema({
+              name: d.name,
+              medicalSpecialty: d.specialization,
+              affiliation: d.hospital,
+              image: d.image,
+            })
+          ),
+        ]}
+      />
       {/* Header */}
       <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

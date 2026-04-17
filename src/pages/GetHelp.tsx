@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { FileText, CheckCircle2, AlertCircle, Upload } from "lucide-react";
 import { useState } from "react";
+import Seo from "../components/seo/Seo";
+import { webPageSchema } from "../components/seo/schemas";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -35,6 +37,16 @@ export default function GetHelp() {
 
   return (
     <div className="bg-white min-h-screen pb-24">
+      <Seo
+        title="Get Help from AIBDF"
+        description="Patients and caregivers can register for AIBDF's support — specialist referrals, financial assistance, and guidance for navigating auto-immune blistering disease care."
+        jsonLd={webPageSchema({
+          path: "/get-help",
+          name: "Get Help",
+          description: "Register for patient support.",
+          breadcrumbs: [{ name: "Home", path: "/" }, { name: "Get Help", path: "/get-help" }],
+        })}
+      />
       {/* Header */}
       <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

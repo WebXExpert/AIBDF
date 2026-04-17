@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 import { Users, HeartHandshake, Stethoscope, GraduationCap } from "lucide-react";
+import Seo from "../components/seo/Seo";
+import { webPageSchema } from "../components/seo/schemas";
 
 const programs = [
   {
@@ -35,6 +37,17 @@ const programs = [
 export default function Programs() {
   return (
     <div className="bg-white min-h-screen pb-24">
+      <Seo
+        title="Programs & Initiatives"
+        description="AIBDF runs four core programs — awareness, patient support, medical collaboration, and educational outreach — to address the gaps in care for rare blistering diseases."
+        keywords={["AIBDF programs", "patient support pemphigus", "dermatology CME India"]}
+        jsonLd={webPageSchema({
+          path: "/programs",
+          name: "Our Programs & Initiatives",
+          description: "AIBDF's four-pillar program structure.",
+          breadcrumbs: [{ name: "Home", path: "/" }, { name: "Programs", path: "/programs" }],
+        })}
+      />
       {/* Header */}
       <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

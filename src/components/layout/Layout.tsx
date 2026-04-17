@@ -30,6 +30,7 @@ export default function Layout() {
       items: [
         { name: t('nav.our_story'), path: "/about" },
         { name: t('nav.leadership'), path: "/leadership" },
+        { name: "Affiliations", path: "/affiliations" },
         { name: t('nav.financials'), path: "/financials" },
       ]
     },
@@ -39,6 +40,7 @@ export default function Layout() {
         { name: t('nav.diseases'), path: "/diseases" },
         { name: t('nav.programs'), path: "/programs" },
         { name: t('nav.impact'), path: "/impact" },
+        { name: "Blog", path: "/blog" },
       ]
     },
     {
@@ -46,6 +48,7 @@ export default function Layout() {
       items: [
         { name: t('nav.volunteer'), path: "/volunteer" },
         { name: t('nav.events'), path: "/events" },
+        { name: "Media", path: "/media" },
       ]
     },
     { name: t('nav.testimonials'), path: "/testimonials" },
@@ -441,6 +444,7 @@ export default function Layout() {
             <div className="flex gap-6 text-sm font-medium text-gray-400">
               <Link to="/privacy" className="hover:text-gray-900 transition-colors">{t('nav.privacy')}</Link>
               <Link to="/terms" className="hover:text-gray-900 transition-colors">{t('nav.terms')}</Link>
+              <Link to="/refund-policy" className="hover:text-gray-900 transition-colors">Refund Policy</Link>
             </div>
           </div>
         </div>

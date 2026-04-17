@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 import { Quote, Star } from "lucide-react";
+import Seo from "../components/seo/Seo";
+import { webPageSchema } from "../components/seo/schemas";
 
 const testimonials = [
   {
@@ -47,8 +49,30 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const reviewSchemas = testimonials.map((t) => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    reviewBody: t.quote,
+    author: { "@type": "Person", name: t.name },
+    itemReviewed: { "@id": "https://aibdf.digitaldadi.agency/#organization" },
+    reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+  }));
+
   return (
     <div className="bg-white min-h-screen pb-24">
+      <Seo
+        title="Patient Testimonials"
+        description="Real patient voices — stories from people who found the right diagnosis, support, and community through AIBDF."
+        jsonLd={[
+          ...reviewSchemas,
+          webPageSchema({
+            path: "/testimonials",
+            name: "Patient Testimonials",
+            description: "Patient stories and experiences with AIBDF.",
+            breadcrumbs: [{ name: "Home", path: "/" }, { name: "Testimonials", path: "/testimonials" }],
+          }),
+        ]}
+      />
       {/* Header */}
       <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

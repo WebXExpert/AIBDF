@@ -6,3 +6,18 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Cortex intelligence files (auto-generated)
+.cortex-context.md
+NEXT_SESSION_PROMPT.md
+NEXT-SESSION-PROMPT.md
+CORTEX_INTELLIGENCE_MASTER.md
+
+# Local dev / migration scripts — contain secrets or are one-shot tooling
+CLAUDE.md
+download_wp_content.cjs
+replace_unsplash.cjs
+take_screenshots.mjs
+AIBDF-deploy.zip
+wp-pages.json
+wp-posts.json

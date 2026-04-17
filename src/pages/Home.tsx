@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { useTranslation } from "react-i18next";
 import { AnimatedHeading } from "../components/ui/AnimatedHeading";
+import Seo from "../components/seo/Seo";
+import { organizationSchema, websiteSchema } from "../components/seo/schemas";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,6 +77,12 @@ export default function Home() {
 
   return (
     <div className="flex flex-col bg-white overflow-x-hidden" ref={container}>
+      <Seo
+        title="AIBDF — Auto-Immune Blistering Disease Foundation"
+        description="AIBDF is India's leading patient foundation for auto-immune blistering diseases. Early diagnosis support, specialist network, financial aid, and patient community — rooted in compassion, backed by world-class medical advisors."
+        keywords={["pemphigus India", "bullous pemphigoid", "auto-immune blistering disease", "rare skin disease NGO", "AIBDF", "pemphigus foundation India"]}
+        jsonLd={[organizationSchema, websiteSchema]}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-20 pb-12 overflow-hidden bg-gray-50">
         <div className="w-full max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 relative z-10">

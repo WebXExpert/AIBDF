@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowRight, BookOpen, ShieldAlert, Activity } from "lucide-react";
 import { AnimatedHeading } from "../components/ui/AnimatedHeading";
+import Seo from "../components/seo/Seo";
+import { webPageSchema } from "../components/seo/schemas";
 
 const diseases = [
   {
@@ -25,6 +27,17 @@ const diseases = [
 export default function Diseases() {
   return (
     <div className="bg-white min-h-screen pb-24">
+      <Seo
+        title="Auto-Immune Blistering Diseases"
+        description="Plain-language patient guide to pemphigus, bullous pemphigoid, dermatitis herpetiformis, and related auto-immune blistering conditions — reviewed by AIBDF's medical advisory board."
+        keywords={["pemphigus vulgaris", "bullous pemphigoid", "dermatitis herpetiformis", "rare skin disease", "autoimmune blistering"]}
+        jsonLd={webPageSchema({
+          path: "/diseases",
+          name: "Auto-Immune Blistering Diseases",
+          description: "Overview of auto-immune blistering diseases.",
+          breadcrumbs: [{ name: "Home", path: "/" }, { name: "Diseases", path: "/diseases" }],
+        })}
+      />
       {/* Hero Section */}
       <div className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-slate-50" />

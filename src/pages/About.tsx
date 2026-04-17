@@ -2,10 +2,26 @@ import { motion } from "motion/react";
 import { Target, Eye, Heart, Users, ShieldCheck, Stethoscope, ArrowRight } from "lucide-react";
 import { AnimatedHeading } from "../components/ui/AnimatedHeading";
 import { Link } from "react-router-dom";
+import Seo from "../components/seo/Seo";
+import { organizationSchema, webPageSchema } from "../components/seo/schemas";
 
 export default function About() {
   return (
     <div className="bg-white min-h-screen pb-24">
+      <Seo
+        title="About AIBDF"
+        description="The Auto-Immune Blistering Disease Foundation was founded by Mr. Ashok Suratwala in loving memory of his wife. Our story, mission, vision, and the trustees who steward AIBDF."
+        keywords={["About AIBDF", "Ashok Suratwala", "pemphigus foundation India", "Jayshree Suratwala"]}
+        jsonLd={[
+          organizationSchema,
+          webPageSchema({
+            path: "/about",
+            name: "About AIBDF",
+            description: "AIBDF's founding story, mission, and trustees.",
+            breadcrumbs: [{ name: "Home", path: "/" }, { name: "About", path: "/about" }],
+          }),
+        ]}
+      />
       {/* Hero Section */}
       <div className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-slate-50" />
