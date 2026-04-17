@@ -366,10 +366,10 @@ export default function Layout() {
               <div className="relative z-10">
                 <h3 className="font-bold mb-6 text-sm uppercase tracking-wider text-white/90">Connect</h3>
                 <div className="flex flex-wrap gap-3 mb-8">
-                  <a href="#" className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-primary transition-all backdrop-blur-sm"><Facebook className="w-5 h-5" /></a>
-                  <a href="#" className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-primary transition-all backdrop-blur-sm"><Twitter className="w-5 h-5" /></a>
-                  <a href="#" className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-primary transition-all backdrop-blur-sm"><Instagram className="w-5 h-5" /></a>
-                  <a href="#" className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-primary transition-all backdrop-blur-sm"><Linkedin className="w-5 h-5" /></a>
+                  <a href="https://www.facebook.com/aibdf" target="_blank" rel="noopener noreferrer" aria-label="AIBDF on Facebook" className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-primary transition-all backdrop-blur-sm"><Facebook className="w-5 h-5" /></a>
+                  <a href="https://twitter.com/aibdf" target="_blank" rel="noopener noreferrer" aria-label="AIBDF on Twitter" className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-primary transition-all backdrop-blur-sm"><Twitter className="w-5 h-5" /></a>
+                  <a href="https://www.instagram.com/aibdf" target="_blank" rel="noopener noreferrer" aria-label="AIBDF on Instagram" className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-primary transition-all backdrop-blur-sm"><Instagram className="w-5 h-5" /></a>
+                  <a href="https://www.linkedin.com/company/aibdf" target="_blank" rel="noopener noreferrer" aria-label="AIBDF on LinkedIn" className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-primary transition-all backdrop-blur-sm"><Linkedin className="w-5 h-5" /></a>
                 </div>
               </div>
               <Link

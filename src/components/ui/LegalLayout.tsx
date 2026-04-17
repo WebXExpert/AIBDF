@@ -46,6 +46,7 @@ export default function LegalLayout({ title, highlightWord, intro, lastUpdated, 
             <ArrowLeft className="w-4 h-4" /> Back to home
           </Link>
           <AnimatedHeading
+            as="h1"
             text={highlighted}
             className="text-4xl md:text-6xl font-medium text-slate-900 mb-6 tracking-tight leading-tight"
           />

@@ -63,6 +63,7 @@ export default function Impact() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-4xl">
             <AnimatedHeading
+              as="h1"
               text="Our *Impact*"
               className="text-5xl md:text-7xl font-medium text-slate-900 mb-8 tracking-tight leading-tight"
             />

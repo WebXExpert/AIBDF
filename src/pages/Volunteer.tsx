@@ -6,6 +6,7 @@ import { Users, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import Seo from "../components/seo/Seo";
 import { webPageSchema } from "../components/seo/schemas";
+import { submitForm } from "../lib/submitForm";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -19,16 +20,21 @@ type FormData = z.infer<typeof formSchema>;
 
 export default function Volunteer() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({
     resolver: zodResolver(formSchema)
   });
 
   const onSubmit = async (data: FormData) => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    console.log("Volunteer form submitted:", data);
-    setIsSubmitted(true);
-    reset();
+    setSubmitError(null);
+    try {
+      await submitForm("volunteer", data);
+      setIsSubmitted(true);
+      reset();
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please email info@aibdf.in.");
+    }
   };
 
   return (
@@ -159,6 +165,14 @@ export default function Volunteer() {
                   />
                   {errors.profession && <p className="text-red-500 text-sm mt-2 font-medium">{errors.profession.message}</p>}
                 </div>
+
+                <input type="text" {...register("website" as never)} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+
+                {submitError && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-2xl text-red-700 text-sm font-medium">
+                    {submitError}
+                  </div>
+                )}
 
                 <div className="pt-4">
                   <button

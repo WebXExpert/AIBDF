@@ -6,6 +6,7 @@ import { FileText, CheckCircle2, AlertCircle, Upload } from "lucide-react";
 import { useState } from "react";
 import Seo from "../components/seo/Seo";
 import { webPageSchema } from "../components/seo/schemas";
+import { submitForm } from "../lib/submitForm";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -23,16 +24,20 @@ type FormData = z.infer<typeof formSchema>;
 
 export default function GetHelp() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormData>({
     resolver: zodResolver(formSchema)
   });
 
   const onSubmit = async (data: FormData) => {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    console.log("Form submitted:", data);
-    setIsSubmitted(true);
+    setSubmitError(null);
+    try {
+      await submitForm("help", data);
+      setIsSubmitted(true);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please email info@aibdf.in.");
+    }
   };
 
   return (
@@ -267,6 +272,14 @@ export default function GetHelp() {
                       By submitting this form, you consent to AIBDF securely storing your information for the purpose of medical evaluation and assistance.
                     </p>
                   </div>
+
+                  <input type="text" {...register("website" as never)} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+
+                  {submitError && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-2xl text-red-700 text-sm font-medium">
+                      {submitError}
+                    </div>
+                  )}
 
                   <button
                     type="submit"

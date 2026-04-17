@@ -7,6 +7,7 @@ import { useState } from "react";
 import { AnimatedHeading } from "../components/ui/AnimatedHeading";
 import Seo from "../components/seo/Seo";
 import { organizationSchema, webPageSchema } from "../components/seo/schemas";
+import { submitForm } from "../lib/submitForm";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -20,17 +21,21 @@ type FormData = z.infer<typeof formSchema>;
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({
     resolver: zodResolver(formSchema)
   });
 
   const onSubmit = async (data: FormData) => {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    console.log("Contact form submitted:", data);
-    setIsSubmitted(true);
-    reset();
+    setSubmitError(null);
+    try {
+      await submitForm("contact", data);
+      setIsSubmitted(true);
+      reset();
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please email info@aibdf.in.");
+    }
   };
 
   return (
@@ -58,7 +63,8 @@ export default function Contact() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-4xl">
-            <AnimatedHeading 
+            <AnimatedHeading
+              as="h1"
               text="*Contact* Us"
               className="text-5xl md:text-7xl font-medium text-slate-900 mb-8 tracking-tight leading-tight"
             />
@@ -217,6 +223,15 @@ export default function Contact() {
                   />
                   {errors.message && <p className="text-red-500 text-sm mt-2 font-medium">{errors.message.message}</p>}
                 </div>
+
+                {/* Honeypot (hidden from users, bots fill it and get silently dropped) */}
+                <input type="text" {...register("website" as never)} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+
+                {submitError && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-2xl text-red-700 text-sm font-medium">
+                    {submitError}
+                  </div>
+                )}
 
                 <div className="pt-4">
                   <button
